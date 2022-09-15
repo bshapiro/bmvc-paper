@@ -1,0 +1,10 @@
+{"K": 20,
+ "iter": 500, 
+ "phi_mean_prior": 1000,
+ "phi_scale_prior": 1, 
+ "init": "kmeans", 
+ "inference": "alternating", 
+ "pseudo": true, 
+ "rs": 0, 
+ "phi_power": 1
+}
