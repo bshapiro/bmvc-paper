@@ -1,0 +1,14 @@
+{"K": 20, 
+ "iter": 300, 
+ "phi_mean_prior": 0,
+ "phi_scale_prior": 1, 
+ "init": "kmeans", 
+ "inference": "alternating", 
+ "pseudo": true, 
+ "rs": 19,
+ "phi_power": 1, 
+ "num_pcs": 10, 
+ "num_pcs_removed": [1,1],
+ "N": null,
+ "track_convergence": false
+}
