@@ -1,10 +1,10 @@
-from black_box_vi_base import run_vi
-from gd import run_gd
-from FullMVCModel import FullMVCModel
-from PseudoMVCModel import PseudoMVCModel
+from vi_base import run_vi
+from gd_base import run_gd
+from FullBMVCModel import FullBMVCModel
+from PseudoBMVCModel import PseudoBMVCModel
 
 
-def gen_vi_mvc_results(X1, X2, R, K,
+def gen_vi_bmvc_results(X1, X2, R, K,
                        phi=None,
                        phi_mean_prior=0,
                        phi_scale_prior=1,
@@ -17,7 +17,7 @@ def gen_vi_mvc_results(X1, X2, R, K,
                        phi_power=1,
                        track_convergence=False):
     if pseudo:
-        model = PseudoMVCModel(X1,
+        model = PseudoBMVCModel(X1,
                                X2,
                                R,
                                K,
@@ -30,7 +30,7 @@ def gen_vi_mvc_results(X1, X2, R, K,
                                phi_power=phi_power,
                                track_convergence=track_convergence)
     else:
-        model = FullMVCModel(X1,
+        model = FullBMVCModel(X1,
                              X2,
                              R,
                              K,
@@ -47,7 +47,7 @@ def gen_vi_mvc_results(X1, X2, R, K,
     return model, vi_params
 
 
-def gen_gd_mvc_results(X1, X2, R, K,
+def gen_gd_bmvc_results(X1, X2, R, K,
                        phi=None,
                        phi_mean_prior=0,
                        phi_scale_prior=1,
@@ -60,7 +60,7 @@ def gen_gd_mvc_results(X1, X2, R, K,
                        phi_power=1,
                        track_convergence=False):
     if pseudo:
-        model = PseudoMVCModel(X1,
+        model = PseudoBMVCModel(X1,
                                X2,
                                R,
                                K,
@@ -73,7 +73,7 @@ def gen_gd_mvc_results(X1, X2, R, K,
                                phi_power=phi_power,
                                track_convergence=track_convergence)
     else:
-        model = FullMVCModel(X1,
+        model = FullBMVCModel(X1,
                              X2,
                              R,
                              K,
@@ -86,6 +86,6 @@ def gen_gd_mvc_results(X1, X2, R, K,
                              phi_power=phi_power,
                              track_convergence=track_convergence)
 
-    vi_params = run_gd(model, step_size=step_size, num_iters=iter, random_state=random_state)
+    gd_params = run_gd(model, step_size=step_size, num_iters=iter, random_state=random_state)
     mv_z1, mv_z2 = model.get_z()
-    return model, vi_params
+    return model, gd_params

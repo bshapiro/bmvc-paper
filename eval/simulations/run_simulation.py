@@ -16,7 +16,7 @@ from simulations import two_cluster_sim, \
                         generate_data_baseline_mod, \
                         compare_clusterings_ari
 from pickle import dump
-from runners import gen_vi_mvc_results, gen_gd_mvc_results
+from runners import gen_vi_bmvc_results, gen_gd_bmvc_results
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import scale
 import numpy as np
@@ -29,9 +29,9 @@ init = 'kmeans'
 inference = 'alternating'
 pseudo = False
 
-sim = sys.argv[1]
-mod = float(sys.argv[2])
-p = float(sys.argv[3])
+sim = sys.argv[1]  # can be missing, basic, onto or baseline
+mod = float(sys.argv[2])  # shift amount
+p = float(sys.argv[3])  # randomness parameter
 
 if sim == 'baseline':
     K = 4
@@ -67,7 +67,7 @@ for trial in range(10):
     print("Running MVC...")
     phi = None
 
-    mvc, params = gen_vi_mvc_results(X1, X2, R, K,
+    mvc, params = gen_gd_bmvc_results(X1, X2, R, K,
                                      phi=phi,
                                      phi_mean_prior=phi_mean_prior,
                                      phi_scale_prior=phi_scale_prior,
@@ -87,7 +87,7 @@ for trial in range(10):
         print("Running GMM...")
         phi = 0
 
-        gmm, params = gen_gd_mvc_results(X1, X2, R, K,
+        gmm, params = gen_gd_bmvc_results(X1, X2, R, K,
                                          phi=phi,
                                          phi_mean_prior=phi_mean_prior,
                                          phi_scale_prior=phi_scale_prior,
@@ -105,7 +105,7 @@ for trial in range(10):
 
         phi = 0
 
-        gmm, params = gen_gd_mvc_results(X1, X2, R, K,
+        gmm, params = gen_gd_bmvc_results(X1, X2, R, K,
                                          phi=phi,
                                          phi_mean_prior=phi_mean_prior,
                                          phi_scale_prior=phi_scale_prior,
