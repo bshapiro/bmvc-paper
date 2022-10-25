@@ -39,3 +39,7 @@ You will need the following packages:
 The inference framework used here is based on an extension of the work done by David Duvenaud and Ryan Adams in "Black-Box Stochastic Variational Inference in Five Lines of Python". (See https://www.cs.toronto.edu/~duvenaud/papers/blackbox.pdf). It also inspired in part by James Vucovic's (@jamesvuc) fork, in which he implemented a variety of really useful gradient estimates. 
 
 We have further extended this framework into an easier-to-use lightweight framework for quick model iteration using black box variational inference in python. Please see https://github.com/bshapiro/bbvi-framework for more details.
+
+## DOI
+
+[![DOI](https://zenodo.org/badge/536823167.svg)](https://zenodo.org/badge/latestdoi/536823167)
