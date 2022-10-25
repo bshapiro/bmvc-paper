@@ -1,6 +1,7 @@
 # Bayesian Multi-View Clustering
 
 This repository contains code and parameter details supporting F1000 submission Bayesian Multi-View Clustering Given Complex Inter-view Structure.
+
 ## Tutorial
 
 We suggest that new users begin by stepping through the tutorial Jupyter notebook located in eval/simulations. It demonstrates the use of BMVC on simulated data has described in the original paper. 
@@ -38,4 +39,3 @@ You will need the following packages:
 The inference framework used here is based on an extension of the work done by David Duvenaud and Ryan Adams in "Black-Box Stochastic Variational Inference in Five Lines of Python". (See https://www.cs.toronto.edu/~duvenaud/papers/blackbox.pdf). It also inspired in part by James Vucovic's (@jamesvuc) fork, in which he implemented a variety of really useful gradient estimates. 
 
 We have further extended this framework into an easier-to-use lightweight framework for quick model iteration using black box variational inference in python. Please see https://github.com/bshapiro/bbvi-framework for more details.
-
