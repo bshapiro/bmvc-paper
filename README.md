@@ -4,7 +4,7 @@ This repository contains code and parameter details supporting F1000 submission 
 
 ## Tutorial
 
-We suggest that new users begin by stepping through the tutorial Jupyter notebook located in eval/simulations. It demonstrates the use of BMVC on simulated data has described in the original paper. 
+We suggest that new users begin by stepping through the tutorial Jupyter notebook located in eval/simulations. It demonstrates the use of BMVC on simulated data as described in the original paper. 
  
 ## Repository description  
 
